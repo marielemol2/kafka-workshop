@@ -1,19 +1,19 @@
 # kafka-workshop
-El caso de uso creado para este workshop consiste en la creación de un tweet.
-- Producer: cuando un usuario publique un tweet el microservicio va a producir un evento en topic 'tweet'.
-- Consumer: va a consumir el tweet y va a generar un log.
+The use case created for this workshop is the creation of a tweet. 
+- Producer: when a user publishes a tweet, the microservice will produce an event in topic 'tweet'.
+- Consumer: consumes the tweet from the topic 'tweet' and generates a log.
 
-Se va a utilizar la herramienta Docker Compose para generar y orquestrar los contenedores del consumer, producer, y zookeeper. 
-También se ha definido un contenedor que inicializa los topics.
+Docker Compose tool is used to get microservices up and running easily. Along with microservices, Kafka broker and the zookeeper service are also needed.
 
 
 ## Usage
-
+Create services that are described in the docker-compose.yml. 
 ```bash
-docker compose up
+docker-compose up
 ```
-
+If the code of microservices is modified the .jar file must be generated, the services must be rebuilt without using the cache, and services must be recreated again.
 ```bash
 mvn package
 docker-compose build --no-cache && docker-compose up
 ```
+
