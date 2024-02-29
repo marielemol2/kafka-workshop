@@ -1,0 +1,14 @@
+spring:
+    cloud:
+        function:
+            definition: consumerBinding
+        stream:
+            bindings:
+                consumerBinding-in-0:
+                    destination: tweets
+            kafka:
+                binder:
+                    brokers:
+                        - kafka:9092
+
+
